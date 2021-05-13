@@ -1,0 +1,26 @@
+<div class="card w-75 text-center">
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title">{{title}}</h3>
+  </div>
+  <div class="card-body">
+    <form role="form">
+      <div class="row">
+        <!-- text input -->
+        <div>
+          <p class="card-text text-left">{{description}}</p>
+        </div>
+      </div>
+        <!-- text input -->
+        <div class="form-group">
+          <mat-radio-group class = "tp-radio-group" [disabled]="!canEdit" [(ngModel)]="selected" (ngModelChange)="changed()" name="answer">
+            <mat-radio-button *ngFor="let answer of answers; let i=index" [value]="i">
+              {{answer}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+    </form>
+  </div>
+  <input type="hidden" value="*endcomponent*" disabled />
+</div>
+</div>

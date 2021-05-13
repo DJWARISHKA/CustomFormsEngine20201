@@ -1,0 +1,7 @@
+<div class="container">
+
+  <h1>{{form.name}}</h1>
+  <h4>{{form.description}}</h4>
+  <ng-template #component></ng-template>
+  <button class="btn btn-primary" [attr.disabled]="myAnswer" (click)="saveAnswers()">Отправить ваш ответ</button>
+</div>

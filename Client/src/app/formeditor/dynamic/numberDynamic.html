@@ -1,0 +1,49 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <p class="card-title">{{data.el_name}}</p>
+    <div class="card-tools">
+      <input type="button" class="btn btn-tool" name="copy" value="Копировать" (click)="onCopy()">
+      <input type="button" class="btn btn-tool" name="delete" value="Удалить" (click)="onDelete()">
+    </div>
+  </div>
+  <div class="card-body">
+    <form role="form">
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- text input -->
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Вопрос" name="number" [(ngModel)]="data.question"
+              required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <!-- text input -->
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Описание" name="description"
+              [(ngModel)]="data.description">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- text input -->
+          <div class="form-group">
+            <input type="number" class="form-control" placeholder="Min" name="min" [(ngModel)]="data.min">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <!-- textarea -->
+          <div class="form-group">
+            <input type="number" class="form-control" placeholder="Max" name="max" [(ngModel)]="data.max">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="required" [(ngModel)]="data.required">
+          <label class="form-check-label">Обязательный вопрос</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

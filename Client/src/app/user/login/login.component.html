@@ -1,0 +1,49 @@
+<router-outlet></router-outlet>
+<div class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <img src="assets/img/AdminLTELogo.png" width="100" height="100" alt="AdminLTE Logo"
+        class="brand-image img-circle elevation-3">
+      <p><b>Custom</b>Forms</p>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Войдите, чтобы начать сеанс</p>
+        <form #form='ngForm' autocomplete="off" (submit)="onSubmit(form)">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email" #Email='ngModel' name="Email"
+              [(ngModel)]="formModel.Email">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" #Password='ngModel' name="Password"
+              [(ngModel)]="formModel.Password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+              <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">Войти</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+        <p class="mb-0">
+          <a routerLink="/registration" routerLinkActive="active" class="text-center">Регистрация</a>
+        </p>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  <!-- /.login-box -->

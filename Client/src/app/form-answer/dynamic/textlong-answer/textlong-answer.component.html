@@ -1,0 +1,11 @@
+<div class="card w-75 text-center">
+  <div class="card card-primary">
+    <div class="card-header">
+      <h4 class="card-title">{{title}}</h4>
+    </div>
+    <p class="card-text text-left">{{description}}</p>
+    <textarea class="form-control" rows="10" placeholder="Ответ" name="answer" [(ngModel)]="answer"
+      [disabled]="!canEdit" (ngModelChange)="changed()">
+    </textarea>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+
+<div class="card w-75 text-center">
+  <div class="card card-primary">
+    <div class="card-header">
+      <h4 class="card-title">{{title}}</h4>
+    </div>
+      <p class="card-text text-left">{{description}}</p>
+        <!-- text input -->
+          <mat-checkbox [disabled]="!canEdit" class="checkbox text-left ml-4" *ngFor="let ans of Answer;" name="answer" [(ngModel)]="ans.checked"
+            (change)="changed(ans.answer)">{{ans.answer}}
+          </mat-checkbox>
+  </div>
+</div>

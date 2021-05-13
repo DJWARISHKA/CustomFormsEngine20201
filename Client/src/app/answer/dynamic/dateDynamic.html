@@ -1,0 +1,27 @@
+<div class="card card-primary" (hidden)="data.hidden">
+  <div class="card-header">
+
+  </div>
+  <div class="card-body">
+    <form role="form">
+      <div class="row">
+        <!-- text input -->
+        <div class="form-group">
+          <h3 class="form-control">{{data.question}}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <!-- text input -->
+        <div class="form-group">
+          <p class="form-control">{{data.description}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <!-- text input -->
+        <div class="form-group">
+          <input type="date" class="form-control" name="answer" [(ngModel)]="data.answer" (ngModelChange)="onChange()">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Таблицы</h1>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card card-primary">
+            <div class="card-header">
+              <div class="card-title">
+                Список доступных таблиц
+              </div>
+            </div>
+            <div class="card-body">
+              <div>
+                <div class="btn-group w-100 mb-2">
+                  <a class="btn btn-info active" href="javascript:void(0)" data-filter="all"> Все таблицы </a>
+                  <a class="btn btn-info" href="javascript:void(0)" data-filter="1"> Category 1 </a>
+                  <a class="btn btn-info" href="javascript:void(0)" data-filter="2"> Category 2 </a>
+                  <a class="btn btn-info" href="javascript:void(0)" data-filter="3"> Category 3 </a>
+                  <a class="btn btn-info" href="javascript:void(0)" data-filter="4"> Category 4 </a>
+                </div>
+              </div>
+              <div>
+                <div class="filter-container p-1 row">
+                  <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
+                    <a [routerLink]="'../formeditor'" routerLinkActive="active">
+                      <img src="https://via.placeholder.com/300/000000?text=%2B" class="img-fluid mb-2"
+                        alt="white sample" />
+                    </a>
+                  </div>
+
+                  <div class="filtr-item col-3" *ngFor="let userForm of userDetails.forms">
+                    <div class="card card-primary">
+                      <div class="card-header">
+                        <h5 class="card-title">{{userForm.name}}</h5>
+                        <div class="dropdown card-tools">
+                          <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item form-control" style="color:#000000"
+                              (click)="onXlsx(userForm)">Сохранить ответы в Xlsx</a>
+                            <a class="dropdown-item form-control" style="color:#000000"
+                              (click)="onCsv(userForm)">Сохранить ответы в Csv</a>
+                            <a class=" dropdown-item form-control" style="color:#000000"
+                              [routerLink]="['./home/formeditor', userForm.url]">Редактировать</a>
+                            <a (click)="Delete(userForm)" style="color:#000000"
+                              class="dropdown-item form-control">Удалить</a>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="card-text">{{userForm.description}}</p>
+                      <div class="card-footer">
+
+                        <button class="btn btn-primary" [routerLink]="['../../formanswer', userForm.url]" type="button">
+                          Ответить
+                        </button>
+                        <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                          data-target="#modal-default" (click)="url = userForm.url">
+                          Отправить
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<div class="modal fade" id="modal-default">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Отправить приглашение</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Введите почты получателей по одной на строку</p>
+        <textarea class="form-control" rows="5" placeholder="Emails" [(ngModel)]="this.emails"
+          name="description"></textarea>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="url=''">Закрыть</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onSend()">Отправить</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+  <div class="p-3">
+    <h5>Title</h5>
+    <p>Sidebar content</p>
+  </div>
+</aside>
+<!-- /.control-sidebar -->

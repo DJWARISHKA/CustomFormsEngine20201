@@ -1,0 +1,36 @@
+<div class="content-wrapper">
+  <section class="content">
+
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">{{form.name}}</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <form role="form">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>{{form.description}}</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- /.card-body -->
+    </div>
+
+    <answer *ngFor="let dynamic of dynamics; let i=index;" [element]="dynamic" [data]="dynamic" [index]="i"
+      (change)="onChange($event)">
+    </answer>
+    <br>
+
+    <form>
+      <div class="row">
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-primary" (click)="onSave()">Сохранить</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>

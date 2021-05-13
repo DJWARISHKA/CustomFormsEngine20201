@@ -1,0 +1,67 @@
+<div class="hold-transition register-page">
+  <div class="register-box">
+    <div class="register-logo">
+      <img src="assets/img/AdminLTELogo.png" width="100" height="100" alt="AdminLTE Logo"
+        class="brand-image img-circle elevation-3">
+      <p><b>Custom</b>Forms</p>
+    </div>
+
+    <div class="card">
+      <div class="card-body register-card-body">
+        <p class="login-box-msg">Зарегистрировать нового пользователя</p>
+
+        <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+          <div class="input-group mb-3">
+            <input formControlName="UserName" type="text" class="form-control" placeholder="Имя">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input formControlName="FullName" type="text" class="form-control" placeholder="Фамилия">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input formControlName="Email" type="email" class="form-control" placeholder="Email">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div formGroupName="Passwords">
+            <div class="input-group mb-3">
+              <input formControlName="Password" type="password" class="form-control" placeholder="Пароль">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input formControlName="ConfirmPassword" type="password" class="form-control"
+                placeholder="Подтверждение пароля">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+            <!-- /.col -->
+          </div>
+        </form>
+        <a routerLink="/login" routerLinkActive="active" class="text-center">Уже есть аккаунт</a>
+      </div>
+      <!-- /.form-box -->
+    </div><!-- /.card -->
+  </div>
+</div>

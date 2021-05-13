@@ -1,0 +1,10 @@
+.tp-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+ }
+
+ .mat-radio-group{
+    display:flex ;
+    width:100%;
+    justify-content: space-between;
+  }

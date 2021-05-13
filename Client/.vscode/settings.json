@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/33a71ccf-a2b8-4268-9478-234525342b51/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/customformsangularclient",
+    "appService.deploySubpath": "dist\\custom-forms-client"
+}

@@ -1,0 +1,41 @@
+<div class="card card-primary" (hidden)="data.hidden">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <form role="form">
+      <div class="row">
+        <!-- text input -->
+        <div class="form-group">
+          <h3 class="form-control">{{data.question}}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <!-- text input -->
+        <div class="form-group">
+          <p class="form-control">{{data.description}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <!-- text input -->
+        <div class="form-group" *ngIf="data.el_type == 'checkbox'">
+          <mat-checkbox *ngFor="let value of values; let i=index" class="form-control" name="answer"
+            (ngModelChange)="onChange(i)">{{value}}
+          </mat-checkbox>
+        </div>
+        <div class="form-group" *ngIf="data.el_type == 'radiobox'">
+          <mat-radio-group [(ngModel)]="selected" (ngModelChange)="onChange()" name="answer">
+            <mat-radio-button *ngFor="let value of values; let i=index" [value]="i">
+              {{value}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="form-group" *ngIf="data.el_type == 'combobox'">
+          <mat-select placeholder="Ответ" [(ngModel)]="selected" (ngModelChange)="onChange()" name="answer">
+            <mat-option *ngFor="let value of values; let i=index" [value]="i">
+              {{value}}
+            </mat-option>
+          </mat-select>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="card w-75 text-center">
+  <div class="card card-primary">
+    <div class="card-header">
+      <h4 class="card-title">{{title}}</h4>
+    </div>
+    <p class="card-text text-left">{{description}}</p>
+
+    <select class="form-control" [disabled]="!canEdit" [(ngModel)]="checkedAnswer" (ngModelChange)='changed()'>
+      <option *ngFor="let ans of answers">{{ans}}</option>
+    </select>
+
+  </div>
+</div>
